@@ -1,0 +1,359 @@
+/* GLOBAL */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   font-size: 62.5%;
+
+   --bg-color: #030B0D;
+   --bg-btn: rgb(83, 63, 24);
+   --bg-btn-hover: rgb(109, 83, 30);
+   --pattern-ft: #e1e1e6d1;
+   --table-th: rgb(43, 33, 15);
+   --table-border: rgb(80, 66, 41);
+   --bg-table: #181818;
+   --bg-tr-odd: #1d1d1d;
+   --bg-tr-hover: #2c2929; 
+   --border-line: #484848;
+}
+
+body {
+   font-size: 1.6rem;
+   background-color: var(--bg-color);
+}
+
+body, input, button {
+   font-family: "Roboto Mono", monospace;
+   font-weight: 700;
+}
+
+#app {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+/* for the css not to read but without disturbing the screen reader (for accessibility) */
+.sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   /* to create a rectangle with mesure 0 */
+   clip: rect(0, 0, 0, 0);
+   /* not to make the break */
+   white-space: nowrap;
+   border-width: 0;
+}
+
+/* HEADER ///////////////////////////////////////////////////////// */
+header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: 6rem;
+   gap: 3rem;
+}
+
+header h1 {
+   color: var(--pattern-ft);
+   font-size: 4.2rem;
+}
+
+header img {
+   height: 2.5rem;
+}
+
+.search {
+   display: flex;
+   gap: 1rem;
+   flex-direction: column;
+   align-items: center;
+}
+
+input, button {
+   border-radius: 5px;
+   border: none;
+}
+
+.search input::placeholder {
+   color: #64646a;
+}
+
+.search input {
+   padding: .8rem;
+   outline: none;
+   font-size: 1.6rem;
+   padding: 1.1rem;
+   margin-bottom: 1rem;
+   background: var(--bg-table);
+   color: var(--pattern-ft);
+}
+
+.search button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   font-size: 1.6rem;
+   padding: 1rem;
+   background: var(--bg-btn);
+   color: var(--pattern-ft);
+   cursor: pointer;
+   transition: .3s;
+}
+
+.search button:hover {
+   background-color: var(--bg-btn-hover);
+}
+
+button img {
+   height: 2.5rem;
+}
+
+/* TABLE ////////////////////////////////////////////////////////// */
+.table-wrapper {
+   overflow-x: auto;
+   padding: 0 1.5rem;
+   margin-top: 5rem;
+   display: grid;
+   margin-bottom: 6rem;
+}
+
+table {
+   background: var(--bg-table);
+   box-shadow: 0 1rem 2rem -.7rem #e1e1e634;
+   border-radius: 12px;
+   border-collapse: collapse;
+   overflow: auto;
+}
+
+thead th {
+   border-bottom: 1px solid var(--border-line);
+   color: var(--pattern-ft);
+   padding: 1.4rem;
+   /* text-align: left; */
+}
+
+thead th:nth-child(1) {
+   padding: 2.3rem;
+}
+
+thead th:nth-child(1) span {
+   display: flex;
+}
+
+thead th:nth-child(1) span div {
+   display: inline-flex;
+   flex-direction: column;
+   gap: .5rem;
+}
+
+thead th:nth-child(2) span,
+thead th:nth-child(3) span,
+thead th:nth-child(4) span {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: .5rem;
+}
+
+th img {
+   height: 2rem;
+}
+
+tbody {
+   /* height: 400px; */
+}
+
+tbody tr:nth-child(odd),
+tbody tr:nth-child(even) {
+   transition: .3s;
+}
+
+tbody tr:nth-child(odd):hover,
+tbody tr:nth-child(even):hover {
+   background: var(--bg-tr-hover);
+}
+
+tbody tr:nth-child(odd) {
+   background: var(--bg-tr-odd);
+}
+
+tbody td:nth-child(2),
+tbody td:nth-child(3),
+tbody td:nth-child(4) {
+   text-align: center;
+}
+
+tbody td {
+   text-align: left;
+   color: white;
+   padding: 1.5rem 2rem;
+}
+
+.tr-user td {
+   color: var(--pattern-ft);
+}
+
+tbody .user img {
+   width: 50px;
+   border-radius: 25px;
+}
+
+tbody .user a {
+   text-decoration: none;
+   color: var(--pattern-ft);
+   display: grid;
+   gap: .5rem;
+   margin-top: .5rem;
+}
+
+tbody .user a span {
+   font-weight: 300;
+}
+
+tbody .remove {
+   background: none;
+   border: none;
+   color: var(--pattern-ft);
+   width: 10px;
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+/* BIG STAR */
+.noFavorites td{
+   text-align: center;
+   padding: 13rem 0;
+}
+
+.noFavorites img {
+   margin-bottom: 2rem;
+}
+
+.noFavorites p {
+   color: #4E5455;
+   font-size: 2rem;
+}
+
+/* MEDIA //////////////////////////////////////////////////////// */
+@media(min-width: 610px) {
+   #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .table-wrapper {
+      padding: 0 2rem;
+   }
+
+   thead th:nth-child(1) span div {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+   }
+
+   thead th:nth-child(2) span,
+   thead th:nth-child(3) span,
+   thead th:nth-child(4) span {
+   display: flex;
+   flex-direction: row;
+   gap: 1rem;
+   align-items: center;
+  }
+}
+
+@media(min-width: 800px) {
+   #app {
+      justify-content: center;
+      align-items: center;
+   }
+
+   header {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 750px;
+      margin-top: 8rem;
+   }
+
+   .search {
+      flex-direction: row;
+   }
+
+   .search input {
+      margin-bottom: 0;
+   }
+
+   .table-wrapper {
+      margin-top: 8rem;
+   }
+
+   table {
+      width: 750px;
+   }
+
+/* BIG STAR */
+   .noFavorites td {
+      width: 750px;
+      /* position: relative; */
+   }
+
+   .noFavorites p {
+      color: #4E5455;
+      font-size: 2.5rem;
+   }
+}
+
+@media(min-width: 1300px) {
+   header {
+      width: 1200px;
+      flex-direction: row;
+      justify-content: space-between;
+      /* margin-top: 11rem; */
+      gap: 0rem;
+      margin-top: 12rem;
+   }
+
+   input {
+      width: 46rem;
+   }
+
+   button {
+      width: 17rem;
+   }
+
+   table {
+      width: 1200px;
+   }
+
+   th {
+      font-size: 1.8rem;
+   }
+   
+   thead th:nth-child(1) {
+      padding-left: 4.5rem;
+   }
+
+   tbody td.user {
+      padding-left: 4.3rem;
+   }
+
+   /* BIG STAR */
+   .noFavorites td div {
+      display: flex;
+      gap: 5rem;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+   }
+}
+

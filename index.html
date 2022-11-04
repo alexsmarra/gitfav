@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;700&display=swap" rel="stylesheet">
+
+   <link rel="shortcut icon" href="./images/linkShortcutStar.svg" type="image/x-icon">
+
+   <link rel="stylesheet" href="style.css">
+   <script src="js/main.js" type="module" defer></script>
+   <title>GitFav</title>
+</head>
+<body>
+   <div id="app">
+      <header>
+         <h1>{<img src="./images/h1-star.svg" alt="star image">} GitFav</h1>
+
+         <div class="search">
+            <label class="sr-only" for="input-search">Github username</label>
+            <input type="text" placeholder="Type github username to favorite" id="input-search">
+            <button><img src="./images/star-btn.svg" alt="star image"> FAVORITE</button>
+         </div>
+      </header>
+      
+      <div class="table-wrapper">
+         <table>
+            <thead>
+               <tr>
+                  <th>
+                     <span>
+                        <div>
+                        <img src="./images/user.svg" alt="user image">
+                        User
+                        </div>
+                     </span>
+                  </th>
+
+                  <th>
+                     <span>
+                        <img src="./images/repos.svg" alt="repositories image">
+                        Repositories
+                     </span>
+                  </th>
+
+                  <th>
+                     <span>
+                        <img src="./images/followers.svg" alt="followers image">
+                        Followers
+                     </span>
+                  </th>
+
+                  <th>
+                     <span>
+                     <img src="./images/action.svg" alt="action image">
+                     Action
+                     </span>
+                  </th>
+               </tr>
+            </thead>
+   
+            <tbody>
+               <tr class="noFavorites">
+                  <td colspan="4">
+                     <div>
+                     <img src="./images/big-star.svg" alt="star image">
+                     
+                     <p>No favorites yet</p>
+                  </div>
+                  </td>
+               </tr>
+               
+               <!-- <tr class="tr-user">
+                  <td class="user">
+                     <img src="https://github.com/alexsmarra.png" alt="Alexandre Simões Marra image">
+         
+                     <a href="https://github.com/alexsmarra" target="_blank">
+                        <p>Alexandre Simões Marra</p>
+                        <span>alexsmarra</span>
+                     </a>
+                  </td>
+         
+                  <td class="repositories">
+                     6
+                  </td>
+         
+                  <td class="followers">
+                     11
+                  </td>
+         
+                  <td>
+                     <button class="remove">&times;</button>
+                  </td>
+               </tr> -->
+               
+               <!-- <tr class="tr-user">
+                  <td class="user">
+                     <img src="https://github.com/diego3g.png" alt="Alexandre Simões Marra image">
+         
+                     <a href="https://github.com/alexsmarra" target="_blank">
+                        <p>Diego Fernandes</p>
+                        <span>diego3g</span>
+                     </a>
+                  </td>
+         
+                  <td class="repositories">
+                     24
+                  </td>
+         
+                  <td class="followers">
+                     25.4k
+                  </td>
+         
+                  <td>
+                     <button class="remove">&times;</button>
+                  </td>
+               </tr> -->
+            </tbody>
+         </table>
+      </div>
+   </div>
+</body>
+</html>
